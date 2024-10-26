@@ -14,17 +14,17 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
         return;
     }
 // Validate names to ensure they don't contain integers
-    if (!isNaN(fname)) {
+    if (containsNumber(fname)) {
         messageDiv.innerHTML = '<div class="alert alert-danger">First name must not contain numbers.</div>';
         return;
     }
-     if (!isNaN(mname)) {
+     if (containsNumber(mname)) {
         messageDiv.innerHTML = '<div class="alert alert-danger">Middle name must not contain numbers.</div>';
         return;
     }
-    if (!isNaN(lname)) {
+    if (containsNumber(lname)) {
         messageDiv.innerHTML = '<div class="alert alert-danger">Last name must not contain numbers.</div>';
-        return true;
+        return;
     }
 
     
@@ -53,6 +53,9 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
     }
 });
 
+function containsNumber(str) {
+  return /\d/.test(str);
+}
 
 window.onload = function() {
     const dateInput = document.getElementById('date');

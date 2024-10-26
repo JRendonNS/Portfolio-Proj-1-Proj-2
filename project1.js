@@ -26,6 +26,11 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
         messageDiv.innerHTML = '<div class="alert alert-danger">Last name must not contain numbers.</div>';
         return;
     }
+    
+    if (fname===mname&&fname===lname){
+    messageDiv.innerHTML = '<div class="alert alert-danger">Fields must be unique</div>';
+        return;
+}
 // Validation for all fields
     if (!fname || !mname || !lname || !email) {
         messageDiv.innerHTML = '<div class="alert alert-danger">Fill all fields.</div>';

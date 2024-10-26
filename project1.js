@@ -26,6 +26,11 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
         messageDiv.innerHTML = '<div class="alert alert-danger">Last name must not contain numbers.</div>';
         return;
     }
+// Validation for all fields
+    if (!fname || !mname || !lname || !email) {
+        messageDiv.innerHTML = '<div class="alert alert-danger">Fill all fields.</div>';
+        return;
+    }
 
     
     // Validation for time selection
